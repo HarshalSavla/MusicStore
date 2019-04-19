@@ -78,26 +78,23 @@ button:hover {
 
 
 
-<form action="login_page_process_1.php" method="POST">
+<form action="change_password_2.php" method="POST">
   
 <div id = "wrap">
 	<div id = "content">
 
   <div class="container">
-  	<h3>Login </h3>
+  	<h3>Change Password</h3>
 
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" >
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" >
+    <label for="psw"><b>Enter Old Password</b></label>
+    <input type="password" placeholder="Enter Old Password" name="old_password" >
 
-    <br>
-    <br>
-    <label for="admin">Admin login?</label>
-    <input type="checkbox" name="admin" value = "Yes">
-        <br><br>
-        <a href="change_password.php"><font size="2">Change Password</font></a>
+    <label for="psw"><b>Enter New Password</b></label>
+    <input type="password" placeholder="Enter Old Password" name="new_password" >
+    
     <br>
     <br>
 
@@ -105,7 +102,7 @@ button:hover {
        
       
        <button  type="submit" formaction="home_page.php" class="cancelbtn">Cancel</button>
-        <button type="submit" class="loginbtn">Login</button>
+        <button type="submit" class="loginbtn">Change Password</button>
       </form>
       
       

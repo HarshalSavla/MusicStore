@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body {
   margin: 0;
@@ -123,6 +123,7 @@ input[type=submit]:hover {
   <a href="#about">About</a>
   <a href="Login_page.php">Login</a>
   <a href="sign_up.php">Signup</a>
+  <a href="sign_up.php">Profile</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -134,6 +135,10 @@ input[type=submit]:hover {
   <input type="text" name="name" placeholder="Enter song name"><br>
   <input type="submit" class = "button">
 </form>
+</div>
+
+<div align = "center">
+ <a href="Landing_page.php" class="button"> Advanced Search</a>
 </div>
 
 <script>

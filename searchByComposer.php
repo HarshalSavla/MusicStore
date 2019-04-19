@@ -18,7 +18,22 @@
 }
 .center {
   text-align: center;
-  border: 1px solid green;
+ 
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 </style>
 </head>
@@ -44,17 +59,22 @@ if($con) {
 
 $sql = "CALL findByComposer('" . $_POST["name"] ."')" ;
 $result = mysqli_query($con, $sql);
-echo "Song Name" . " | " . "Composer <br>";
+
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
+    echo "<table align='center' border='1px'> <tr>    <th>Song Name </th>  <th>Composer</th>  </tr>";
+    
     while($row = mysqli_fetch_assoc($result)) {
-        echo  $row["Song_name"]. " | " . $row["Composer"]. " " . "<br>";
+        
+      echo "<tr><td>" .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "</tr>";
     }
+    echo "</table>";
 } else {
     echo "0 results";
 }
+
 
 ?>
 </div>
@@ -62,8 +82,9 @@ if (mysqli_num_rows($result) > 0) {
 <br>
 <br>
 <div align = "center">
-<a href="Landing_page.php" class = "button"> Go to main page </a>
+<a href="home_page.php" class = "button"> Go to main page </a>
+</div>
 </body>
-	</div>
+	
 
 </html>

@@ -18,9 +18,23 @@
 }
 .center {
   text-align: center;
-  border: 1px solid green;
+  
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
 }
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 </style>
 </head>
 <body>
@@ -43,13 +57,18 @@ if($con) {
 
 $sql = "SELECT SongID, Song_name, Composer, Popularity FROM Song WHERE Song_name Like CONCAT('%','" . $_POST["name"] ."','%')";
 $result = mysqli_query($con, $sql);
-echo "SongID" . " | " . " Song name " . " | " ." Composer "." | " . "Popularity <br>";
+
+
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
+    echo "<table align='center' border='1px'> <tr>  <th>Song ID </th>  <th>Song Name </th>  <th>Composer</th> <th>Popularity </th> </tr>";
+    
     while($row = mysqli_fetch_assoc($result)) {
-        echo  $row["SongID"]. "  |  " . $row["Song_name"]. "  |  " . $row["Composer"]."  |  ". $row["Popularity"]."<br>";
+        // echo "<tr> <td> ".$row["SongID"]. "</td><td>". $row["Song_name"] "</td> <td>". $row["Composer"]."</td> <td>".$row["Popularity"]."</td></tr>";
+      echo "<tr><td>" .$row["SongID"]."</td>" . "<td>" .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "<td>" .$row["Popularity"]."</td></tr>";
     }
+    echo "</table>";
 } else {
     echo "0 results";
 }

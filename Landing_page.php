@@ -53,10 +53,10 @@ div {
   padding: 20px;
 }
 </style>
-</head>
-<div align="center">
-<h3> Online catalog for the Music Store</h3>
-<body></div>
+</head><body>
+<div class="center" align="center"> <h3> Search options</h3> </div>
+
+
 
 <div class="center" align = "center">
 	1. Browse the entire music collection <br>
@@ -80,6 +80,9 @@ div {
 	<input type="text" name="name"  placeholder="Enter Genre"><br>
 	<input type="submit" class = "button">
 </form>
+</div>
+<div align = "center">
+<a href="home_page.php" class = "button"> Go to main page </a>
 </div>
 
 </body>
