@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,9 +60,11 @@ if (mysqli_num_rows($result) > 0) {
         <?php
     }
 } else {
-    echo "Incorrect admin id or password";
     ?>
-    <a href="Login_page.php" class="button"> Try Again </a>
+    <div align="center">
+    	Incorrect admin id or password <br>
+    	<a href="Login_page.php" class="button"> Try Again </a>
+    </div>
     <?php
 }
 
@@ -75,13 +78,25 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
     while($row = mysqli_fetch_assoc($result)) {
-    	echo "Login Successful for user <br>";
-        echo  $row["uname"];
+    	
+        
+        ?>
+    <div align="center">
+    	Login Successful for user <br>
+    	<a href="profile.php" class="button"> Go to profile </a>
+    </div>
+    
+    <?php
+
     }
 } else {
-    echo "Incorrect user id or password";
+    
     ?>
-    <a href="Login_page.php" class="button"> Try Again </a>
+    <div align="center">
+    	Incorrect admin id or password <br>
+    	<a href="Login_page.php" class="button"> Try Again </a>
+    </div>
+    
     <?php
 }
 }

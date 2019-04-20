@@ -94,7 +94,7 @@ tr:nth-child(even) {
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
+  <a href="home_page.php" class="active">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="Login_page.php">Login</a>
@@ -120,18 +120,18 @@ if($con) {
 }
 
 
-$sql = "SELECT SongID, Song_name, Composer, Popularity FROM Song WHERE Song_name Like CONCAT('%','" . $_POST["name"] ."','%')";
+$sql = "SELECT Song_name, Composer, Popularity FROM Song WHERE Song_name Like CONCAT('%','" . $_POST["name"] ."','%')";
 $result = mysqli_query($con, $sql);
 
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
-    echo "<table align='center' border='1px'> <tr>  <th>Song ID </th>  <th>Song Name </th>  <th>Composer</th> <th>Popularity </th> </tr>";
+    echo "<table align='center' border='1px'> <tr>   <th>Song Name </th>  <th>Composer</th> <th>Popularity </th> </tr>";
     
     while($row = mysqli_fetch_assoc($result)) {
         // echo "<tr> <td> ".$row["SongID"]. "</td><td>". $row["Song_name"] "</td> <td>". $row["Composer"]."</td> <td>".$row["Popularity"]."</td></tr>";
-      echo "<tr><td>" .$row["SongID"]."</td>" . "<td>" .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "<td>" .$row["Popularity"]."</td></tr>";
+      echo "<tr><td>"  .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "<td>" .$row["Popularity"]."</td></tr>";
     }
     echo "</table>";
 } else {

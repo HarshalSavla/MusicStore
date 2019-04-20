@@ -72,6 +72,19 @@ body {
   margin: 4px 2px;
   cursor: pointer;
 }
+.button2 {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 4px 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
 .center {
   text-align: center;
   padding-top: 10%;
@@ -156,7 +169,7 @@ tr:nth-child(even) {
  <a href="Landing_page.php" class="button"> Advanced Search</a>
 </div>
 
-<div align="center"> <h3> Top 5 Trending songs </h3> </div>
+
 
 <?php 
 $host="localhost";
@@ -171,7 +184,16 @@ if($con) {
 }
 
 
-$sql = "SELECT Song_name, Composer FROM Song ORDER BY Popularity DESC LIMIT 5";
+if (!empty($_POST["ASC"])){
+  $order="ASC";
+  echo "<div align='center'> <h3> Bottom 5 Trending songs </h3> </div>";
+}
+else{
+$order = "DESC";
+echo "<div align='center'> <h3> Top 5 songs </h3> </div>";
+}
+
+$sql = "SELECT Song_name, Composer FROM Song ORDER BY Popularity $order LIMIT 5";
 $result = mysqli_query($con, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -190,6 +212,16 @@ if (mysqli_num_rows($result) > 0) {
 
 
 ?>
+<div align="center">
+  <form action="home_page.php" method="post">
+  <button class="button2" formaction="home_page.php" name="DESC" value="DESC">Top 5</button> 
+</form>
+<form action="home_page.php" method="post">
+  <button class="button2" formaction="home_page.php" name="ASC" value="ASC"> Bottom 5</button> 
+</form>
+
+</div>
+
 
 <script>
 function myFunction() {

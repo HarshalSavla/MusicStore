@@ -4,60 +4,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body{
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-  .topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
@@ -122,18 +68,8 @@ span.psw {
 </style>
 </head>
 <body>
-<div class="topnav" id="myTopnav">
-  <a href="home_page.php" class="active">Home</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="Login_page.php">Login</a>
-  <a href="sign_up.php">Signup</a>
-  <a href="profile.php">Profile</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
 
+<h2>Profile</h2>
 
 <form action="/action_page.php">
   <div class="imgcontainer">

@@ -84,6 +84,7 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
+
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
@@ -161,7 +162,7 @@ button:hover {
     <hr>
 
     <label for="email"><b>First Name</b></label>
-    <input type="text" placeholder="Enter First Name" name="fname" required>
+    <input type="text" placeholder="Enter First Name" name="fname" required autofocus>
 
     <label for="email"><b>Last Name</b></label>
     <input type="text" placeholder="Enter Last Name" name="lname" required>

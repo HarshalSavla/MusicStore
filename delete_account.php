@@ -1,14 +1,15 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body{
+
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-  .topnav {
+
+.topnav {
   overflow: hidden;
   background-color: #333;
 }
@@ -58,6 +59,17 @@
     text-align: left;
   }
 }
+#wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#content {
+    float: left;
+    position: relative;
+    left: -50%;
+}
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
@@ -84,41 +96,38 @@ button:hover {
   opacity: 0.8;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 20%;
-  border-radius: 50%;
-}
 
 .container {
   padding: 16px;
 }
-
-span.psw {
-  float: right;
-  padding-top: 16px;
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.cancelbtn, .loginbtn {
+  float: left;
+  width: 50%;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
 </style>
 </head>
 <body>
@@ -135,18 +144,41 @@ span.psw {
 </div>
 
 
-<form action="/action_page.php">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
+<form action="delete_user.php" method="POST">
   
+<div id = "wrap">
+	<div id = "content">
 
-  <div class="container" style="background-color:#f1f1f1">
-    <a href="delete_account.php" class="cancelbtn">Delete Account</a>
+  <div class="container">
+  	<h3>Delete Account</h3>
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" >
+
+    <label for="psw"><b>Enter Password</b></label>
+    <input type="password" placeholder="Enter Old Password" name="password" >
+    
+    <br>
+    <br>
+
+    <div class="clearfix">
+       
+      
+       <button  type="submit" formaction="home_page.php" class="cancelbtn">Cancel</button>
+        <button type="submit" class="loginbtn">Delete Account</button>
+
+      </form>
+      
+      
+      
+    </div>
+    
   </div>
-</form>
+
+
+  </div>
+</div>
+
 
 </body>
 </html>
-

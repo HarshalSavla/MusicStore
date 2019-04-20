@@ -58,17 +58,17 @@ if($con) {
 }
 
 
-$sql = "SELECT SongID, Song_name, Composer, Popularity FROM Song";
+$sql = "SELECT Song_name, Composer, Popularity FROM Song";
 $result = mysqli_query($con, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
 
-    echo "<table align='center' border='1px'> <tr>  <th>Song ID </th>  <th>Song Name </th>  <th>Composer</th> <th>Popularity </th> </tr>";
+    echo "<table align='center' border='1px'> <tr>    <th>Song Name </th>  <th>Composer</th> <th>Popularity </th> </tr>";
     
     while($row = mysqli_fetch_assoc($result)) {
         
-      echo "<tr><td>" .$row["SongID"]."</td>" . "<td>" .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "<td>" .$row["Popularity"]."</td></tr>";
+      echo "<tr><td>"  .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td>". "<td>" .$row["Popularity"]."</td></tr>";
     }
     echo "</table>";
 } else {
