@@ -112,18 +112,33 @@ input[type=submit]:hover {
     position: relative;
     left: -50%;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
  
 </style>
 </head>
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
+  <a href="home_page.php" class="active">Home</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="Login_page.php">Login</a>
   <a href="sign_up.php">Signup</a>
-  <a href="sign_up.php">Profile</a>
+  <a href="profile.php">Profile</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -140,6 +155,41 @@ input[type=submit]:hover {
 <div align = "center">
  <a href="Landing_page.php" class="button"> Advanced Search</a>
 </div>
+
+<div align="center"> <h3> Top 5 Trending songs </h3> </div>
+
+<?php 
+$host="localhost";
+$user="root";
+$password="";
+$dbname = "music_store_db";
+$con=mysqli_connect($host,$user,$password,$dbname);
+if($con) {
+    echo '<h1></h1>';
+} else {
+    echo '<h1></h1>';
+}
+
+
+$sql = "SELECT Song_name, Composer FROM Song ORDER BY Popularity DESC LIMIT 5";
+$result = mysqli_query($con, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+
+    echo "<table align='center' border='1px'> <tr>  <th>Song Name </th>  <th>Composer</th>  </tr>";
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        
+      echo "<tr> <td>" .$row["Song_name"]."</td>". "<td>" .$row["Composer"]."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+
+?>
 
 <script>
 function myFunction() {

@@ -3,11 +3,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-   body {
+
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-  .topnav {
+
+.topnav {
   overflow: hidden;
   background-color: #333;
 }
@@ -142,26 +144,20 @@ button:hover {
 </div>
 
 
-<form action="login_page_process_1.php" method="POST">
+<form action="delete_user.php" method="POST">
   
 <div id = "wrap">
 	<div id = "content">
 
   <div class="container">
-  	<h3>Login </h3>
+  	<h3>Delete Account</h3>
 
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" >
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" >
-
-    <br>
-    <br>
-    <label for="admin">Admin login?</label>
-    <input type="checkbox" name="admin" value = "Yes">
-        <br><br>
-        <a href="change_password.php"><font size="2">Change Password</font></a>
+    <label for="psw"><b>Enter Password</b></label>
+    <input type="password" placeholder="Enter Old Password" name="password" >
+    
     <br>
     <br>
 
@@ -169,7 +165,8 @@ button:hover {
        
       
        <button  type="submit" formaction="home_page.php" class="cancelbtn">Cancel</button>
-        <button type="submit" class="loginbtn">Login</button>
+        <button type="submit" class="loginbtn">Delete Account</button>
+
       </form>
       
       

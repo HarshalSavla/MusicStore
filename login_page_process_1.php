@@ -54,11 +54,15 @@ if (mysqli_num_rows($result) > 0) {
 
 		<div align="center">
         	<a href="admin_operations.php" class="button"> Go to admin page </a>
+        	echo "<script>location.href='admin_operations.php';</script>";
         </div>
         <?php
     }
 } else {
     echo "Incorrect admin id or password";
+    ?>
+    <a href="Login_page.php" class="button"> Try Again </a>
+    <?php
 }
 
 
@@ -76,6 +80,9 @@ if (mysqli_num_rows($result) > 0) {
     }
 } else {
     echo "Incorrect user id or password";
+    ?>
+    <a href="Login_page.php" class="button"> Try Again </a>
+    <?php
 }
 }
 
