@@ -14,4 +14,4 @@ https://www.apachefriends.org/download.html
 2. Import the music_store_db.sql through phpMyAdmin. 
 3. Copy the music_store folder (contains all php files) into the htdocs folder. This can be found under HDD>Applications>XAMPP>htdocs.
 4. Enter http://localhost/music_store/home_page.php in a web browser.
-5. Trying to directly load certain pages might cause an error. So, use home page to navigate to other pages.
+5. Trying to directly load certain pages might cause an error. So, use home_page.php to navigate to other pages.
